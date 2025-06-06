@@ -1,0 +1,4 @@
+ONLY_68K=N
+PREFIX=/opt/m68k-atari-mintelf
+COMPILE_ELF=Y
+CFLAGS=-Wall -Werror -Wextra #-DDEBUG
