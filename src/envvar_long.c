@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <limits.h>
+#include <errno.h>
 #include "internal.h"
 
 int
@@ -16,7 +17,7 @@ xyz_envvar_long(const char *name, long *v)
 
     *v = strtol(p, NULL, 10);
 
-    if (*v == LONG_MIN || *v == LONG_MAX) {
+    if ((*v == LONG_MIN || *v == LONG_MAX) && errno == ERANGE) {
         *v = 0;
         return XYZ_ERR;
     }
