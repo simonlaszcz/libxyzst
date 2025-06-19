@@ -39,7 +39,7 @@ else
 endif
 
 CFLAGS+=\
-	-Os -s \
+	-Os \
 	-fomit-frame-pointer
 	
 CC=$(CROSSPREFIX)gcc
